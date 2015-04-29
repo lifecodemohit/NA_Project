@@ -1,0 +1,2 @@
+#!/bin/bash
+sudo tcpdump -vvvn -i any dst port 2400

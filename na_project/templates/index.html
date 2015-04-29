@@ -1,0 +1,111 @@
+{% load static %}
+<html>
+    <head>
+        <title>Network Admin Project</title>
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body>
+    	<div style="font-size:34px;font-weight:800">Network Traffic Generator and Analyzer (Network Administration Project)</div>
+
+    	<!--{% if list1 %}
+		<ul>
+		{% for doc in list1 %}
+		        <li>{{ doc}}</li>
+		{% endfor %}
+		</ul>
+		{% else %}
+		    <p>No doc are available.</p>
+		{% endif %}!-->
+    	<form id="upload_form" action="{% url 'index' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %} 
+            <div style="float:left;width:300px">
+		        <div >
+		            <label>Source IP : </label>
+		            <input type="text" name="s_ip" ></input>
+		        </div>
+		        <div>
+		            <label>Source Port : </label>
+		            <input type="text" name="s_port"></input>
+		        </div>
+		         <div> 
+		            <label>Target IP : </label>
+		            <input type="text" name="t_ip"></input>
+		        </div>
+		        <div>
+		            <label>Target Port : </label>
+		            <input type="text" name="t_port"></input>
+		        </div>
+		        <div>
+		            <label>Protocol : </label>
+		            <input type="text" name="protocol"></input>
+		        </div>
+		    </div>
+		    <div style="float:left;width:400px">
+		        <div>
+		            <label>Source IP Yes/No : </label>
+		            <input type="text" name="s_ip_yn"></input>
+		        </div>
+		        <div>
+		            <label>Source Port Yes/No : </label>
+		            <input type="text" name="s_port_yn"></input>
+		        </div>
+		        <div>
+		            <label>Target IP Yes/No : </label>
+		            <input type="text" name="t_ip_yn"></input>
+		        </div>
+		        <div>
+		            <label>Target Port Yes/No : </label>
+		            <input type="text" name="t_port_yn"></input>
+		        </div>
+		        <div>
+		            <label>Protocol Yes/No : </label>
+		            <input type="text" name="protocol_yn"></input>
+		        </div>
+		    </div>
+		        
+		    <div style="float:left;width:300px">
+		        <div>
+		            <label>Source IP Value : </label>
+		            <input type="text" name="s_ip_v"></input>
+		        </div>
+		        <div>
+		            <label>Source Port Value : </label>
+		            <input type="text" name="s_port_v"></input>
+		        </div>
+		        <div>
+		            <label>Target IP Value : </label>
+		            <input type="text" name="t_ip_v"></input>
+		        </div>
+		        <div>
+		            <label>Target Port Value : </label>
+		            <input type="text" name="t_port_v"></input>
+		        </div>
+		        <div>
+		            <label>Protocol Value : </label>
+		            <input type="text" name="protocol_v"></input>
+		        </div>
+		    </div>
+	        
+	        <br>
+	        <br>
+	        <br>
+	        <br>
+	        <br>
+	        <br>
+	        <br>
+
+	        <div>
+	            <label>Packet Size(atleast 30B) : </label>
+	            <input type="text" name="packet_size"></input>
+	        </div>
+	        
+	        <div>
+	            <label>Upload Document : </label>
+	            <input type="file" name="documentFile" label='Select a file'></input>
+	        </div>
+	        <br>
+	        <button type="submit" class="btn btn-default" style="width:20%;height:50px;margin-left:15px">Submit</button>
+        </form>
+    </body>
+</html>
